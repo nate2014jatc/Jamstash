@@ -53,7 +53,9 @@ function subsonicService(
         scrobble             : scrobble,
         search               : search,
         subsonicRequest      : subsonicRequest,
-        toggleStar           : toggleStar
+        toggleStar           : toggleStar,
+        addToJukebox         : addToJukebox,
+        sendToJukebox        : sendToJukebox
     });
 
     // TODO: Hyz: Remove when refactored
@@ -107,7 +109,7 @@ function subsonicService(
             httpPromise = $http.get(url, actualConfig);
         }
         httpPromise.success(function (data) {
-            var subsonicResponse = (data['subsonic-response'] !== undefined) ? data['subsonic-response'] : { status: 'failed' };
+            var subsonicResponse = (data && data !== undefined && data['subsonic-response'] !== undefined) ? data['subsonic-response'] : { status: 'failed' };
             if (subsonicResponse.status === 'ok') {
                 deferred.resolve(subsonicResponse);
             } else {
@@ -568,6 +570,29 @@ function subsonicService(
         }).then(function () {
             return ! item.starred;
         });
+        return promise;
+    }
+
+    function addToJukebox(song) {
+        if (globals.settings.Debug) { console.log("Load Jukebox"); }
+        var promise = self.subsonicRequest('jukeboxControl.view', {
+            params: {
+                action: 'set',
+                id: song.id
+            }
+        }).then(function () {
+            self.sendToJukebox('start');
+        });
+        return promise;
+    }
+
+    function sendToJukebox(action) {
+        if (globals.settings.Debug) { console.log("Send Jukebox " + action); }
+        var promise = self.subsonicRequest('jukeboxControl.view', {
+            params: {
+                action: action
+            }
+        })
         return promise;
     }
 }
