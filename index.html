@@ -1,9 +1,9 @@
-﻿<!DOCTYPE HTML>
+<!DOCTYPE HTML>
 <html>
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
-    <title>Subsonic - MiniSub</title>
+    <title>MiniSub</title>
     <link href="images/subsonic_32x32.ico" rel="shortcut icon" />
     <link rel="icon" href="images/subsonic_48x48.png" sizes="48x48"/>
     <link rel="icon" href="images/subsonic_32x32.png" sizes="32x32"/>
@@ -35,7 +35,6 @@
     <script src="js/ui-load.js" type="text/javascript"></script>
 </head>
 <body>
-
 <div id="container">
     <div id="messages"></div>    
     <a href="#" id="logo" target="_blank"></a>
@@ -45,7 +44,6 @@
         <li><a href="#tabQueue" id="action_tabQueue" title="Play Queue"><img src="images/play_alt_gd_16x16.png" /></a></li>
         <li><a href="#tabPlaylists" id="action_tabPlaylists" title="Playlists"><img src="images/list_gd_16x14.png" /></a></li>
         <li><a href="#tabPodcasts" id="action_tabPodcasts" title="Podcasts"><img src="images/rss_16x16.png" /></a></li>
-        <!--<li><a href="#tabVideos" id="action_tabVideos" title="Videos"><img src="images/movie_gd_16x16.png" /></a></li>-->
         <li><a href="#tabSettings" id="action_tabSettings" class="last" title="Settings"><img src="images/cog_16x16.png" /></a></li>
         </ul>
         <div id="toploading"></div>
@@ -148,7 +146,7 @@
                     <div class="padder">
                     <ul class="simplelist"><li class="index">Auto Playlists</li></ul>
                     <ul id="AutoPlaylistContainer" class="simplelist mainlist"></ul>
-					<ul class="simplelist"><li class="index">Folder Playlists</li></ul>
+	            <ul class="simplelist"><li class="index">Folder Playlists</li></ul>
                     <ul id="FolderContainer" class="simplelist mainlist"></ul>
                     <ul class="simplelist"><li class="index">Saved Playlists</li></ul>
                     <ul id="PlaylistContainer" class="simplelist mainlist"></ul>
@@ -219,17 +217,6 @@
                         <!--<a href="#" class="button" id="action_RequestURL" title="Request Permission for Server URL">Enable URL</a><br />-->
                         <label for="SubsonicVersion">Subsonic API: <span class="apiversion" id="SubsonicVersion"></span></label><br />
                         <label for="SMStats">Audio State: <span id="SMStats"></span></label><br /><br />
-                        <div id="donate" class="subsection floatleft">
-                            <h3 class="title">Buy me a <span class="beer">beer</span>! I'd like that :)</h3>
-                            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-                            <input type="hidden" name="cmd" value="_s-xclick">
-                            <input type="hidden" name="hosted_button_id" value="VMTENRSJWQ234">
-                            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-                            <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-                            </form>
-                            <small>*This is a donation to <a href="https://twitter.com/tsquillario" target="_blank">tsquillario</a>, the developer of <a href="https://github.com/tsquillario/MiniSub" target="_blank">MiniSub</a>.
-                            <br />Not related to a Subsonic License!</small>
-                        </div>
                     </div>
                     <div class="subsection floatleft">
                         <h3 class="title">Options</h3>
@@ -310,162 +297,6 @@
                     </ul>
                 </div>
                 <div class="clear"></div>
-                <div class="subsection floatleft">
-                    <h3 class="title">Change Log</h3>
-                    <ul id="ChangeLog" class="preferences">
-                    <!--
-                    <li class="log"><span class="version"></span>
-                        <span class="changes">- </span>
-                    </li>
-                    -->
-                    <li class="log"><span class="version">1/15/2013 - 2.4.1</span>
-                        <span class="changes">- Column alignment, moved pager, bug fixes</span>
-                    </li>
-                    <li class="log"><span class="version">12/21/2012 - 2.3.8</span>
-                        <span class="changes">- Added support for the <a href="https://chrome.google.com/webstore/detail/swayfm-unified-music-medi/icckhjgjjompfgoiidainoapgjepncej" target="_blank">Sway.fm Unified Music Media Keys</a> Chrome extension</span>
-                        <span class="changes">- Added Artist links</span>
-                        <span class="changes">- Fixed click behavior of song notification popup</span>
-                        <span class="changes">- Search is now displayed globally</span>
-                    </li>
-                    <li class="log"><span class="version">12/6/2012 - 2.3.6</span>
-                        <span class="changes">- Added Setting to toggle JSONP (This is for cross-domain requests, aka Subsonic is hosted on a different domain than MiniSub)</span>
-                        <span class="changes">- Switched back to URL authentication (Including coverArt)</span>
-                    </li>
-                    <li class="log"><span class="version">12/3/2012 - 2.3.5</span>
-                        <span class="changes">- Added keyboard volume controls back. Use the plus (=/+) and minus (-/_) keys</span>
-                        <span class="changes">- Change Save Current Position to Save Progress, added an indicator next to volume</span>
-                        <span class="changes">- Fixed Last.fm scrobble feature, this works again!</span>
-                        <span class="changes">- Switch to Basic Authentication</span>
-                    </li>
-                    <li class="log"><span class="version">11/27/2012 - 2.3.4</span>
-                        <span class="changes">- Basic Breadcrumb navigation implemented</span>
-                    </li>
-                    <li class="log"><span class="version">11/1/2012 - 2.3.1</span>
-                        <span class="changes">- Autopilot & Auto Playlists will use the currently selected Music Folder</span>
-                        <span class="changes">- Volume slider, mute button added</span>
-                        <span class="changes">- Added Created Date to Albums</span>
-                        <span class="changes">- Click song notification to skip to next track</span>
-                    </li>
-                    <li class="log"><span class="version">10/30/2012 - 2.2.7</span>
-                        <span class="changes">- Added Shortcuts!</span>
-                        <span class="changes">- Upgraded to FancyBox2</span>
-                        <span class="changes">- Switched to <a href="http://www.jplayer.org" target="_blank">jPlayer</a> for HTML5/Flash audio+video, video support coming soon!</span>
-                    </li>
-                    <li class="log"><span class="version">10/26/2012 - 2.2.6</span>
-                        <span class="changes">- Re-enabled Drag and Drop sorting on Current Playlist</span>
-                        <span class="changes">- Started passing the contentType directly (hopefully supporting Ogg, as well as others depending on your browser)</span>
-                        <span class="changes">- Taking a lot of crap for the "Access your data on all websites", sorry I have no other choice! (If you want to help star this issue: <a href="http://code.google.com/p/chromium/issues/detail?id=158004" target="_blank">http://code.google.com/p/chromium/issues/detail?id=158004</a>)</span>
-                    </li>
-                    <li class="log"><span class="version">10/15/2012 - 2.2.0</span>
-                        <span class="changes">- Column sorting for all headers in all tables! (Thanks to <a href="https://github.com/joequery/Stupid-Table-Plugin" target="_blank">joequery</a>)</span>
-                        <span class="changes">- Fancy Webkit styled scrollbars for those of you with browsers that don't suck (Works with Dark theme)</span>
-                        <span class="changes">- Auto Albums feature Next & Previous links to page through results</span>
-                        <span class="changes">- Forced to include permissions ("http://*/*" & "https://*/*"). Your Subsonic server can be at any URL. Will be asked to accept "Access your data on all websites".</span>
-                    </li>
-                    <li class="log"><span class="version">10/8/2012 - 2.1.5</span>
-                        <span class="changes">- Added song count and total time to Current Playlist</span>
-                        <span class="changes">- Migrated to version 2 of Chrome App manifest.json</span>
-                    </li>
-                    <li class="log"><span class="version">10/7/2012 - 2.1.2</span>
-                        <span class="changes">- Current Playlist will stay focused on the current track (Thanks <a href="https://github.com/tsquillario/MiniSub/issues/42" target="_blank">Concept211</a>)</span>
-                        <span class="changes">- Option to save track position & the Current Playlist automatically, will persist on a browser refresh/close</span>
-                        <span class="changes">- Added Autopilot feature to start playing random songs with one click, this will continue to load more songs</span>
-                        <span class="changes">- Made it easier to skip to a certain position in the current song (Hover over the progress bar)</span>
-                        <span class="changes">- Tab change fades in for a little eye candy</span>
-                        <span class="changes">- Volume controls! Use the plus (=/+) and minus (-/_) keys</span>
-                    </li>
-                    <li class="log"><span class="version">9/30/2012 - 2.1</span>
-                        <span class="changes">Moved ratings to stars (5 star ratings will reappear eventually)</span>
-                    </li>
-                    <li class="log"><span class="version">9/30/2012 - 2.0.9</span>
-                        <span class="changes">Added Dark Theme</span>
-                        <span class="changes">Fixed issue with track duration display</span>
-                    </li>
-                    <li class="log"><span class="version">9/30/2012 - 2.0.8</span>
-                        <span class="changes">Removed "http://*/" permission from manifest.json (This was what caused the permissions alert, more info <a href="http://developer.chrome.com/extensions/permission_warnings.html" target="_blank">here</a>)</span>
-                    </li>
-                    <li class="log"><span class="version">9/29/2012 - 2.0.7</span>
-                        <span class="changes">Updated to SoundManager2 v297a-20120916</span>
-                        <span class="changes">Implemented <i>updatePlaylist</i> API method. Allows for larger playlists.</span>
-                        <span class="changes">Added support for Podcasts (Thanks to <a href="https://github.com/nithinphilips/MiniSub" target="_blank">nithinphilips</a>)</span>
-                        <span class="changes">Added Genre support for Auto Playlists (Thanks to <a href="https://github.com/Concept211/MiniSub" target="_blank">Concept211</a> & <a href="https://github.com/orangepeelbeef/MiniSub" target="_blank">orangepeelbeef</a>)</span>
-                    </li>
-                    <li class="log"><span class="version">8/13/2012 - 2.0.6</span>
-                        <span class="changes">Minor bugfix</span>
-                    </li>
-                    <li class="log"><span class="version">7/20/2012 - 2.0.5</span>
-                        <span class="changes">Fixed Mp3 only folder issue</span>
-                        <span class="changes">Launch server URL from the Subsonic icon!</span>
-                        <span class="changes">Added "Now Playing" notification option</span>
-                    </li>
-                    <li class="log"><span class="version">7/15/2012 - 2.0.4</span>
-                        <span class="changes">Minor bug fix</span>
-                    </li>
-                    <li class="log"><span class="version">7/15/2012 - 2.0.3</span>
-                        <span class="changes">Fixed double click bug</span>
-                        <span class="changes">Fixed plaintext password issue</span>
-                    </li>
-                    <li class="log"><span class="version">7/5/2012 - 2.0.2</span>
-                        <span class="changes">Added ability to force Flash on the sound plugin</span>
-                    </li>
-                    <li class="log"><span class="version">5/22/2012 - 2.0.1</span>
-                        <span class="changes">Drag and drop sorting for Current and all other Playlists</span>
-                        <span class="changes">Fixed bug with artist index list</span>
-                    </li>
-                    <li class="log"><span class="version">5/21/2012 - 1.9.8</span>
-                        <span class="changes">Support for 4.7beta1 in preparation for next full release</span>
-                        <span class="changes">Ability to download Playlist or Song</span>
-                        <span class="changes">Playing a song from a Playlist or Album will add the rest of the songs to the Current Playlist</span>
-                        <span class="changes">Clicking an album takes you to the album (helpful from a playlist)</span>
-                        <span class="changes">Added ability to search Albums or Songs</span>
-                        <span class="changes">Ability to create new Playlist from any selected songs</span>
-                        <span class="changes">Change track position while playing (lost after switch to SM2)</span>
-                        <span class="changes">Added song rating to Player</span>
-                    </li>
-                    <li class="log"><span class="version">4/3/2012 - 1.9.4</span>
-                        <span class="changes">URL Querystring support for setting of variables</span>
-                        <span class="changes">Added legacy support for Subsonic 4.5</span>
-                        <span class="changes">Fixed Chrome audio bugs</span>
-                    </li>
-                    <li class="log"><span class="version">3/31/2012 - 1.9</span>
-                        <span class="changes">Switched to SoundManager2 audio library (changing track position currently not functional, next update)</span>
-                        <span class="changes">Other minor bug fixes</span>
-                    </li>
-                    <li class="log"><span class="version">3/27/2012 - 1.8</span>
-                        <span class="changes">Added Download link to Albums</span>
-                        <span class="changes">Fixed bug with Next/Previous keyboard shortcuts</span>
-                        <span class="changes">Moved navigation since most displays are widescreen</span>
-                        <span class="changes">Added folder picker, choice will be saved in cookie</span>
-                    </li>
-                    <li class="log"><span class="version">3/9/2012 - 1.7</span>
-                        <span class="changes">- Ability to hide A-Z bar on Artists list</span>
-                        <span class="changes">- Desktop Notifications on browsers that support <span class="code">webkitNotifications</span></span>
-                        <span class="changes">- Redesigned player to utilize entire width of screen</span>
-                    </li>
-                    <li class="log"><span class="version">3/6/2012</span><span class="changes">.022 can be installed anywhere, Chrome App support, JSONP implementation</li>
-                    <li class="log"><span class="version">2/22/2012</span><span class="changes">.021 added sidebar for chat and now playing, bug fixes</li>
-                    <li class="log"><span class="version">1/25/2012</span><span class="changes">.020 table layout for songs, bug fixes, display tweaks</li>
-                    <li class="log"><span class="version">1/18/2012</span><span class="changes">.019 rating support, random playlist, new preferences added</li>
-                    <li class="log"><span class="version">1/9/2012</span><span class="changes">.018 added media keyboard bindings from @itchy</li>
-                    <li class="log"><span class="version">1/5/2012</span><span class="changes">.017 added FancyBox to CoverArt, improved current playlist functions</li>
-                    <li class="log"><span class="version">11/22/2011</span><span class="changes">.016 single artist bug fix, added API error notification</li>
-                    <li class="log"><span class="version">11/15/2011</span><span class="changes">.015 fixed search issue, added last.fm support from @smrq</li>
-                    <li class="log"><span class="version">10/14/2011</span><span class="changes">.014 multiple api call issue fix</li>
-                    <li class="log"><span class="version">10/14/2011</span><span class="changes">.013 moved auto playlists, album display tweaks</li>
-                    <li class="log"><span class="version">10/13/2011</span><span class="changes">.012 added Current Playlist, fixed some bugs</li>
-                    <li class="log"><span class="version">10/2/2011</span><span class="changes">.011 added play button from album list</li>
-                    <li class="log"><span class="version">10/1/2011</span><span class="changes">.010 fix for subdirectory custom installs</li>
-                    <li class="log"><span class="version">9/30/2011</span><span class="changes">.009 now playing support, added back button to track list, other tweaks</li>
-                    <li class="log"><span class="version">9/17/2011</span><span class="changes">.008 pause/play button tweak</li>
-                    <li class="log"><span class="version">9/17/2011</span><span class="changes">.007 display tweaks for tablet, chat feature added</li>
-                    <li class="log"><span class="version">8/25/2011</span><span class="changes">.006 flexible layout, added buttons to player</li>
-                    <li class="log"><span class="version">8/24/2011</span><span class="changes">.005 playlist fixes, added auto playlists</li>
-                    <li class="log"><span class="version">8/17/2011</span><span class="changes">.004 https fix, audio player tweaks</li>
-                    <li class="log"><span class="version">8/15/2011</span><span class="changes">.003 Fixed song details on player </li>
-                    <li class="log"><span class="version">8/15/2011</span><span class="changes">.001 Initial Release</li>
-                    <li><a href="#" id="ChangeLogShowMore">Show More</a></li>
-                    </ul>
-                </div>
                 <div class="clear"></div>
                 <div class="subsection floatleft">
                     <h3 class="title">Links</h3>
@@ -484,7 +315,6 @@
             </div>
             <div class="clear"></div>
         </div>
-
         <div id="SideBar">
             <div id="NowPlaying">
                 <div class="header"><img src="images/rss_12x12.png" /> Now Playing</div>
@@ -496,11 +326,9 @@
             </div>
             <div class="submit"><img src="images/comment_stroke_gl_12x11.png" /><input type="text" id="ChatMsg" class="chat" title="Hit [Enter] to Post" /></div>
         </div>
-        <!-- Audio Player -->
-        <div class="clear"></div>
-        
+        <div class="clear"></div>     
     <div class="clear"></div>
-    </div><!-- end #content -->
+    </div>
     <div id="player">
             <div id="playerleft" class="floatleft">
                 <div class="playeractions floatleft">
@@ -516,7 +344,6 @@
                     <li id="songdetails_artist" class="album" title=""></li>
                     <li id="songdetails_specs" class="specs"></li>
                     <li id="songdetails_controls">
-                    <!--<a href="#" id="action_ShuffleMode" class="shuffle first" title="Shuffle Mode"></a>-->
                     <a href="#" id="action_Mute" class="mute first" title="Mute"></a>
                     <a href="#" id="action_UnMute" class="unmute first" title="Unmute" style="display: none;"></a>
                     <div class="jp-volume-bar"><div class="jp-volume-bar-value"></div></div><a href="#" id="action_VolumeMax" class="volume" title="Max Volume"></a>
@@ -547,6 +374,6 @@
             </div>
             <div class="clear"></div>
         </div>
-</div><!-- end #container -->
+</div>
 </body>
 </html>
